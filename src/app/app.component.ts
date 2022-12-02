@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-store-CyS';
+  linkImg = 'https://api.lorem.space/image/movie'
+
+
+  onLoaded(img: string){
+    console.log('log del padre', img);
+    
+  }
 }
