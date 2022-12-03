@@ -2,3 +2,6 @@
 
 
 <app-img (loaded)="onLoaded($event)" [img]="linkImg" ></app-img>
+
+<hr>
+<app-productos [product]="product" *ngFor="let product of products"></app-productos>
