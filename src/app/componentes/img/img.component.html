@@ -1,7 +1,9 @@
+<img [src]="img" (load)="imgLoaded()" (error)="imgError()" *ngIf="img; else elseImagen">
 
 
-<img [src]="img" (load)="imgLoaded()" (error)="imgError()"  width="100px" *ngIf="img; else elseImagen">
+
+<!-- <h3>{{counter}}sds</h3> -->
+
 <ng-template #elseImagen>
-<img [src]="imagenDefault" alt="vacio">
+    <img [src]="imagenDefault" alt="vacio">
 </ng-template>
-

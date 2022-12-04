@@ -1,7 +1,12 @@
-<p><input type="text" [(ngModel)]="linkImg"></p>
+<!-- <p><input type="text" [(ngModel)]="linkImg"></p>
 
 
-<app-img (loaded)="onLoaded($event)" [img]="linkImg" ></app-img>
+<button (click)="onToggleImage()">toggle imagen</button>
+<p>{{toggleimg}}</p>
 
-<hr>
-<app-productos [product]="product" *ngFor="let product of products"></app-productos>
+<app-img *ngIf="toggleimg" (loaded)="onLoaded($event)" [img]="linkImg"></app-img>
+
+
+<hr> -->
+<app-nav></app-nav>
+<app-products></app-products>
