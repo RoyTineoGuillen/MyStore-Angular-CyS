@@ -6,6 +6,27 @@
     Total: S/.{{total}}
 </p>
 
+<p>
+    Fecha de hoy: {{today|date:'shortDate'}}
+
+</p>
+<p>
+    Fecha de time ago hoy: {{date|timeAgo}}
+
+</p>
+<p>
+    Fecha de hoy: {{today|date:'EEEE, d MMMM y'}}
+
+</p>
+<p>
+    {{'hOLA RooYTubed'|uppercase}}
+
+</p>
+<p>
+    {{'TiNEO'|reverse | uppercase}}
+
+</p>
+
 <div class="products--grid">
 
     <app-productos [product]="product" *ngFor="let product of products" (addedProduct)="onAddToShopingCart($event)">

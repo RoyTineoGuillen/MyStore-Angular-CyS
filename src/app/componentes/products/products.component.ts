@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models/producto.model';
+import { StoreService } from "../../services/store.service";
+import { ProductsService } from "../../services/products.service";
 
 
 @Component({
@@ -7,46 +9,32 @@ import { Product } from '../../models/producto.model';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss'],
 })
-export class ProductsComponent {
-    total=0;
-  myShopingCart:Product[]=[];
+export class ProductsComponent implements OnInit{
+  total = 0;
+  myShopingCart: Product[] = [];
 
-  products: Product[] = [
-    {
-      id: '1',
-      nombre: 'Automobil de juguete',
-      precio: 100,
-      imagen: 'https://api.lorem.space/image/movie',
-    },
-    {
-      id: '2',
-      nombre: 'Muñeca de trapo',
-      precio: 180,
-      imagen: 'https://api.lorem.space/image/movie',
-    },
-    {
-      id: '3',
-      nombre: 'Pelota de futbol',
-      precio: 120,
-      imagen: 'https://api.lorem.space/image/movie',
-    },
-    {
-      id: '3',
-      nombre: 'Pelota de futbol',
-      precio: 120,
-      imagen: 'https://api.lorem.space/image/movie',
-    },
-    {
-      id: '3',
-      nombre: 'Pelota de futbol',
-      precio: 120,
-      imagen: 'https://api.lorem.space/image/movie',
-    },
-  ];
+  products: Product[] = [];
+
+  today = new Date();
+  
+  date =  new Date(2021,1,21)
+  constructor(
+    private StoreService: StoreService,
+    private ProductsService: ProductsService
+    
+    ) {
+    this.myShopingCart= this.StoreService.getShoppingCart();}
 
   onAddToShopingCart(product: Product) {
     console.log(product);
-    this.myShopingCart.push(product)
-    this.total = this.myShopingCart.reduce((sum, item)=>sum+item.precio,0)
+    this.StoreService.addProducto(product)
+    this.total = this.StoreService.getTotal();
+  }
+
+  ngOnInit():void{
+    this.ProductsService.getAllProducts().subscribe(
+        data=>{this.products = data
+        }
+    )
   }
 }

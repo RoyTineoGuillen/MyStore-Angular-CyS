@@ -1,6 +1,6 @@
-import { formatDate } from '@angular/common';
+
 import { Component } from '@angular/core';
-import {Product} from './models/producto.model';
+
 
 @Component({
   selector: 'app-root',

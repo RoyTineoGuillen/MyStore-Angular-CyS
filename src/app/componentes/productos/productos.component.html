@@ -1,6 +1,7 @@
-<app-img [img]="product.imagen"></app-img>
+<app-img [img]="product.image"></app-img>
 
-<h2>{{product.nombre}}</h2>
-<h3>{{product.precio}}</h3>
+<h2>{{product.title}}</h2>
+<h3>{{product.price | currency:'SOL'}}</h3>
+<p appHighlight>{{product.description}}</p>
 
 <button (click)="onAddToCart()">Agregar Carrito</button>

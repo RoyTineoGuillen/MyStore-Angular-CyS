@@ -1,4 +1,4 @@
-import { LocalizedString } from '@angular/compiler';
+
 import { Component, Input, Output, EventEmitter, OnChanges, OnInit, SimpleChanges, AfterViewInit,OnDestroy } from '@angular/core';
 
 @Component({
